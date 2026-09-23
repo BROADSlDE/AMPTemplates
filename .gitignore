@@ -1,0 +1,43 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary / backup files
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+
+# Logs
+*.log
+
+# AMP/runtime artifacts
+AMP_Logs/
+*.pid
+
+# Archives / local test packages
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Local working directories
+tmp/
+temp/
+backup/
+backups/
