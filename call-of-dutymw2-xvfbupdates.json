@@ -39,12 +39,12 @@
         "SkipOnFailure": false
     },
     {
-    "UpdateStageName": "IW4x Launcher Extraction",
-    "UpdateSourcePlatform": "Linux",
-    "UpdateSource": "Executable",
-    "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && tar -xJf iw4x-launcher.tar.xz && chmod +x iw4x-launcher && rm -f iw4x-launcher.tar.xz\"",
-    "SkipOnFailure": false
+        "UpdateStageName": "IW4x Launcher Extraction",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && tar -xJf iw4x-launcher.tar.xz && chmod +x iw4x-launcher && rm -f iw4x-launcher.tar.xz\"",
+        "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Client Installation",
@@ -59,7 +59,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd ./call-of-dutymw2/10190 && chmod +x iw4x-launcher && ./iw4x-launcher --update --skip-self-update --force --path=\\\"{{$FullBaseDir}}\\\"\"",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && chmod +x iw4x-launcher && ./iw4x-launcher --update --skip-self-update --force --path=\\\"{{$FullBaseDir}}\\\"\"",
         "SkipOnFailure": false
     },
     {
