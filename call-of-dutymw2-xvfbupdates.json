@@ -59,7 +59,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && chmod +x iw4x-launcher && ./iw4x-launcher --update --skip-self-update --force --path=\\\"{{$FullBaseDir}}\\\"\"",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && chmod +x iw4x-launcher && ./iw4x-launcher --no-self-update --skip-launch\"",
         "SkipOnFailure": false
     },
     {
