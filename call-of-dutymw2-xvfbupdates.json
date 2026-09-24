@@ -33,12 +33,9 @@
     {
         "UpdateStageName": "IW4x Launcher Download",
         "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://github.com/iw4x/launcher/releases/download/v1.1.8-b.18/launcher-1.1.8-b.18-x86_64-linux-glibc.tar.xz",
-        "UpdateSourceTarget": "{{$FullBaseDir}}",
-        "UnzipUpdateSource": true,
-        "OverwriteExistingFiles": true,
-        "DeleteAfterExtract": true,
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && wget -q -O iw4x-launcher.tar.xz \\\"https://github.com/iw4x/launcher/releases/download/v1.1.8-b.18/launcher-1.1.8-b.18-x86_64-linux-glibc.tar.xz\\\" && tar -xJf iw4x-launcher.tar.xz && rm -f iw4x-launcher.tar.xz && chmod +x iw4x-launcher\"",
         "SkipOnFailure": false
     },
     {
