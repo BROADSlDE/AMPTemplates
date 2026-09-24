@@ -10,7 +10,8 @@
         "UpdateStageName": "Mods Directory Creation",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CreateDirectory",
-        "UpdateSourceArgs": "{{$FullBaseDir}}mods"
+        "UpdateSourceArgs": "{{$FullBaseDir}}mods",
+        "SkipOnFailure": false
     },
     {
         "UpdateStageName": "SteamCMD Game Download",
@@ -23,19 +24,10 @@
     },
     {
         "UpdateStageName": "IW4x Launcher Download",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://github.com/iw4x/launcher/releases/download/v1.1.6/iw4x-launcher.exe",
-        "UpdateSourceTarget": "{{$FullBaseDir}}",
-        "OverwriteExistingFiles": true,
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "IW4x Launcher Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && wget -O iw4x-launcher.tar.xz \\\"https://github.com/iw4x/launcher/releases/download/v1.1.8-b.18/launcher-1.1.8-b.18-x86_64-linux-glibc.tar.xz\\\"\"",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && rm -f iw4x-launcher.tar.xz && wget -q -O iw4x-launcher.tar.xz \\\"https://github.com/iw4x/launcher/releases/download/v1.1.8-b.18/launcher-1.1.8-b.18-x86_64-linux-glibc.tar.xz\\\"\"",
         "SkipOnFailure": false
     },
     {
@@ -47,19 +39,11 @@
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Client Installation",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -Command \"Set-Location -Path '{{$FullBaseDir}}'; & ./iw4x-launcher.exe --update --skip-self-update --force --path=\\\"{{$FullBaseDir}}\\\"\"",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Client Installation",
+        "UpdateStageName": "IW4x Client Installation",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && chmod +x iw4x-launcher && ./iw4x-launcher --no-self-update --skip-launch\"",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && ./iw4x-launcher\"",
         "SkipOnFailure": false
     },
     {
@@ -81,11 +65,11 @@
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Disable Prefix Sound",
+        "UpdateStageName": "Configure Wine Prefix",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd call-of-dutymw2 && [[ -f winetricks ]] && rm -f winetricks; wget -q https://raw.githubusercontent.com/Winetricks/winetricks/refs/tags/20260125/src/winetricks && chmod +x winetricks; export WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\"; export WINEARCH=win64; ./winetricks sound=disabled > winescript_log.txt 2>&1\"",
-        "SkipOnFailure": true
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullRootDir}}\\\" && rm -f winetricks && wget -q https://raw.githubusercontent.com/Winetricks/winetricks/refs/tags/20260125/src/winetricks && chmod +x winetricks && export WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" && export WINEARCH=win64 && ./winetricks -q vcrun2019 d3dcompiler_47 dxvk sound=disabled > winescript_log.txt 2>&1\"",
+        "SkipOnFailure": false
     }
 ]
