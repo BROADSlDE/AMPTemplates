@@ -35,8 +35,16 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && wget -q -O iw4x-launcher.tar.xz \\\"https://github.com/iw4x/launcher/releases/download/v1.1.8-b.18/launcher-1.1.8-b.18-x86_64-linux-glibc.tar.xz\\\" && tar -xJf iw4x-launcher.tar.xz && rm -f iw4x-launcher.tar.xz && chmod +x iw4x-launcher\"",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && wget -O iw4x-launcher.tar.xz \\\"https://github.com/iw4x/launcher/releases/download/v1.1.8-b.18/launcher-1.1.8-b.18-x86_64-linux-glibc.tar.xz\\\"\"",
         "SkipOnFailure": false
+    },
+    {
+    "UpdateStageName": "IW4x Launcher Extraction",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && tar -xJf iw4x-launcher.tar.xz && chmod +x iw4x-launcher && rm -f iw4x-launcher.tar.xz\"",
+    "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Client Installation",
