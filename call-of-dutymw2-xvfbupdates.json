@@ -43,7 +43,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && ./iw4x-launcher\"",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && ./iw4x-launcher --no-self-update --skip-launch\"",
         "SkipOnFailure": false
     },
     {
